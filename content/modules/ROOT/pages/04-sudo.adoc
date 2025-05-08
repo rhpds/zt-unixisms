@@ -1,0 +1,52 @@
+`+sudo+`, on the other hand, is a command which allows non-root users to
+perform administrative tasks. Users in the _wheel_ group have access to
+the `+sudo+` command.
+
+____
+_NOTE:_ When logged in as *root*, the character in the command prompt is
+`+#+`. When you switch users to *rhel*, this character changes to `+$+`.
+*root* will always be symbolized by `+#+` to give you the warning that
+any command you enter will be run with the highest level of
+administrative privileges.
+____
+
+Use the `+su+` command to switch to the *rhel* user:
+
+[source,bash]
+----
+su - rhel
+----
+
+Then, try to access the following file:
+
+[source,bash]
+----
+cat /etc/shadow
+----
+
+This configuration file’s permissions prevent *rhel* from reading its
+contents. However, *rhel* is part of the _wheel_ group, so you can
+circumvent this permissions issue temporarily by prepending `+sudo+` to
+your previous command:
+
+[source,bash]
+----
+sudo cat /etc/shadow
+----
+
+`+sudo+` allowed you to access the contents of the file without changing
+the associated permissions.
+
+____
+_NOTE:_ `+sudo !!+` is a shortcut for rerunning the previous command
+with `+sudo+`
+____
+
+Assuming the system is properly configured, most users should not need
+to regularly use `+sudo+` during day-to-day usage. This command should
+only be necessary when making administrative changes. If you plan to
+make lots of administrative changes, it can save you some time to log in
+as *root*. However, the administrative block can act as a safeguard in
+the case that you erroneously execute an operation that will modify the
+system. Seeing "`permission denied`" will cause you to double check the
+command before re-running it using `+sudo+`.

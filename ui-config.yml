@@ -1,0 +1,24 @@
+---
+antora:
+  name: modules
+  dir: www
+  modules:
+    - name: "01-man"
+      label: "Man"
+      solveButton: true
+    - name: "02-tilde"
+      label: "Tilde"
+      solveButton: true
+    - name: "03-hidden-files"
+      label: "Hidden Files"
+      solveButton: true
+    - name: "04-sudo"
+      label: "Sudo"
+      solveButton: true
+    - name: "05-time"
+      label: "Time"
+      solveButton: true
+
+tabs:
+  - name: ">_ terminal"
+    url: /wetty
