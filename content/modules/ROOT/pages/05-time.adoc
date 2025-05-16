@@ -1,64 +1,66 @@
+=== Date and Time
+
 Now, let’s try a few examples of converting between time formats. The
-`+date+` command is useful for displaying the current date and time of
+`date` command is useful for displaying the current date and time of
 your system. The value output depends on the timezone you have
 configured, and the format of the output can be controlled using format
-strings. If you run `+date+` without any arguments, it will print the
-date and time in the following format:
+strings. If you run `date` without any arguments, it will print the date
+and time in the following format:
 
-[source,bash]
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 date
 ----
 
-____
-_NOTE:_ The output should match the current date and time when you are
+.Output
+[source,text]
+----
+Fri Mar  7 05:17:10 PM UTC 2025
+----
+
+NOTE: The output should match the current date and time when you are
 running this lab, but it will be formatted using the Eastern Timezone
 since that is the default for the lab systems. Converting a date and
-time to epoch time is as simple as a single argument (`++%s+`) with
-`+date+`. You can also specify the `+-d+` option to input a datetime
-instead of using the current one.
-____
+time to epoch time is as simple as a single argument (`+%s`) with
+`date`. You can also specify the `-d` option to input a datetime instead
+of using the current one.
 
-[source,bash]
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 date -d "Dec 12 2014 20:00:00" +%s
 ----
 
+.Output
+[source,text]
+----
+1418414400
+----
+
 This will show you the epoch time corresponding to the string you input:
 
-You can convert in the reverse direction with `+date+` as well by using
-the `+--date+` option, then prepending a `+@+` symbol to the epoch time
-you would like to convert. This syntax specifies that you would like to
-know the date at the given epoch time. Try this using the epoch time you
-just received from the previous command:
+You can convert in the reverse direction with `date` as well by using
+the `--date` option, then prepending a `@` symbol to the epoch time you
+would like to convert. This syntax specifies that you would like to know
+the date at the given epoch time. Try this using the epoch time you just
+received from the previous command:
 
-[source,bash]
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
-date --date @1418432400
+date --date @1418414400
+----
+
+.Output
+[source,text]
+----
+Fri Dec 12 08:00:00 PM UTC 2014
 ----
 
 This results in the original date that you input a few commands ago.
 Notice that this specifies the date in the timezone for this lab system,
 Eastern Time.
 
-For more information on using `+date+`, check out the
-https://man7.org/linux/man-pages/man1/date.1.html[date man page].
-
-An example of how you might run into unix time is available in this
-https://www.redhat.com/sysadmin/selinux-denial2[SELinux troubleshooting
-article]. The following example error is given:
-
-For this lab, we care about the second field in this error. You may
-recognize that ten digit number as a unix timestamp. To confirm, convert
-it to a standard date:
-
-[source,bash]
-----
-date --date @1600796109
-----
-
-The article that this error was taken from was published on November 16,
-2020, which supports the fact that this was a unix timestamp generated
-during the process of writing the article. However, someone who is not
-familiar with the unix time format may never consider that this number
-relates to time at all.
+For more information on using `date`, check out the
+https://man7.org/linux/man-pages/man1/date.1.html[date man page^].

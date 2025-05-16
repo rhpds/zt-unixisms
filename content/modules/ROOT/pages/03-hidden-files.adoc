@@ -1,54 +1,82 @@
-Any file or directory that begins with a `+.+` in the name will be
-interpreted as hidden, and will only show up when using the `+-a+`
-option with `+ls+`.
+=== Accessing Hidden Files
+
+Sometimes it is useful to have a file or directory that it hidden,
+meaning it does not show up when running ls normally.
+This may be because the file is not often used, or because the file shouldn't be tampered with by inexperienced users.
+
+Any file or directory that begins with a `.` such as the `~/.ssh/` directory from the last section will be
+interpreted as hidden, and will only show up when using the `-a` option
+with `ls`.
 
 List the files in your current directory:
 
-[source,bash]
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 ls
 ----
 
-Now, try it again with the `+-a+` option. Many more files and
-directories will show up, even though you have not changed where you are
-looking.
+NOTE: If the directory is empty the command will execute without output.
 
-[source,bash]
+Now, try it again with the `-a` option. Many more files and directories
+will show up, even though you have not changed where you are looking.
+
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 ls -a
 ----
 
-Adding the `+-a+` option reveals that there are numerous hidden files
-and directories in this home directory. These are hidden because they
-are not files that you would interact with often, so there is no need
-for them to clutter up *root*’s home directory visually. However, they
-are data that is associated with the user, so it is beneficial from an
+.Output
+[source,text,subs="+macros,+attributes"]
+----
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .cache  .cshrc  .gnupg  .ssh  .tcshrc  .viminfo
+----
+
+Adding the `-a` option reveals that there are numerous hidden files and
+directories in this home directory. These are hidden because they are
+not files that you would interact with often, so there is no need for
+them to clutter up *root*’s home directory visually. However, they are
+data that is associated with the user, so it is beneficial from an
 organization point of view to store them in the home directory
 associated with their specific user.
 
-____
-_NOTE_: One common hidden directory you will commonly run into is the
-`+.git+` directory. This is part of any git repository and stores data
+NOTE: One common hidden directory you will commonly run into is the
+`.git` directory. This is part of any git repository and stores data
 used in version control for your local repository.
-____
 
 Creating a new hidden file or directory is quite simple, just start the
-name with a `+.+`
+name with a `.`
 
-[source,bash]
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 touch .hidden-file
 ----
 
 Now that this file is created, confirm that it only shows up when using
-`+ls -a+`:
+`ls -a`:
 
-[source,bash]
+Test the file is hidden with `ls`.
+
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 ls
 ----
 
-[source,bash]
+This command has no expected output.
+
+Run `ls -a` to see the file.
+
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 ls -a
+----
+
+.Output
+[source,text,subs="+macros,+attributes"]
+----
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .cache  .cshrc  .gnupg .hidden-file  .ssh  .tcshrc  .viminfo
 ----

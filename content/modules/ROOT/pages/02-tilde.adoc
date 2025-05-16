@@ -1,76 +1,117 @@
-The tilde `+~+` is aliased to the current user’s home directory. To test
+=== What is the '~' directory?
+
+Linux is filled with shortcuts, and learning these shortcuts is a crucial step to speeding up your work.
+One such shortcut is the tilde `~`
+
+The tilde `~` is aliased to the current user's home directory. To test
 out some applications of this, change directories to the root directory
 of the system:
 
-[source,bash]
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 cd /
 ----
 
-The `+~+` alias works in any case where you have to specify a path. If
-you wanted to list the contents of the _openscap_data_ subdirectory
-located in the home directory of *root*, the following command is valid:
+This command has no expected output.
 
-[source,bash]
+The `~` alias works in any case where you have to specify a path. If you
+wanted to list the contents of the _.ssh_ subdirectory located
+in the home directory of *root*, the following command is valid:
+
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
-ls ~/openscap_data
+ls ~/.ssh/
 ----
 
-____
-_NOTE:_ This is another place where you can practice tab completion.
-Typing `+ls ~/op+` and then pressing tab will complete the path for you
-since there is nothing else in *root*’s home directory starting with
-`+op+`.
-____
+.Output
+[source,text,subs="+macros,+attributes"]
+----
+authorized_keys  config  {{ guid }}.pem  {{ guid }}.pub
+----
 
-This means that running `+cd ~+` will always change directories to the
+NOTE: This is another place where you can practice tab completion.
+Typing `ls ~/.ss` and then pressing tab will complete the path for you
+since there is nothing else in *root*'s home directory starting with
+`.ss`.
+
+This means that running `cd ~` will always change directories to the
 home directory of the user that you are logged in as.
 
-[source,bash]
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 cd ~
 ----
 
-You will see that your current directory has changed from
+This command has no expected output.
 
-to
+You will see that your current directory has changed from *"/"* to *"~"*
 
-____
-_NOTE:_ The `+cd+` command contains yet another shortcut, where running
-`+cd+` without any arguments will behave the same as running `+cd ~+`.
-____
+NOTE: The `cd` command contains yet another shortcut, where running
+`cd` without any arguments will behave the same as running `cd ~`.
 
-Print the full path to the directory you are currently in, the `+~+`
-directory, using the "`print working directory`" command:
+Print the full path to the directory you are currently in, the `~`
+directory, using the ``print working directory'' command:
 
-[source,bash]
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 pwd
 ----
 
-This shows that `+~+` is equivalent to `+/root+`, the home directory for
-the *root* user. Try the same test for a different user account on this
-system, *rhel*. Switch to *rhel* in the second terminal tab:
+.Output
+[source,text,subs="+macros,+attributes"]
+----
+/root
+----
 
-[source,bash]
+This shows that `~` is equivalent to `/root`, the home directory for the
+*root* user. Try the same test for a different user account on this
+system, *rhel*.
+
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 su - rhel
 ----
 
-Adding the `+-+` after `+su+` will automatically change directories into
-the *rhel* user’s home directory, so print the full directory again:
+This command has no expected output.
 
-[source,bash]
+Adding the `-` after `su` will automatically change directories into the
+*rhel* user’s home directory, so print the full directory again:
+
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
 ----
 pwd
 ----
 
-You can see that when logged in as *rhel*, `+~+` is equivalent to
-`+/home/rhel+`, which is the *rhel* user’s home directory.
+.Output
+[source,text,subs="+macros,+attributes"]
+----
+/home/rhel
+----
 
-____
-_NOTE:_ The *root* user home directory is in a unique location,
-`+/root+`. All other users’ home directories will be located following
-the convention `+/home/<username>+`, as in the case of the *rhel* user’s
-home directory.
-____
+You can see that when logged in as *rhel*, `~` is equivalent to
+`/home/rhel`, which is the *rhel* user’s home directory.
+
+NOTE: The *root* user home directory is in a unique location, `/root`.
+All other users’ home directories will be located following the
+convention `/home/<username>`, as in the case of the *rhel* user’s home
+directory.
+
+To switch back to the *root* user for the next steps of the lab, type `exit` into the command line, or use the keyboard shortcut by pressing the "ctrl + d" keys at the same time.
+
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
+----
+exit
+----
+
+.Output
+[source,text,subs="+macros,+attributes"]
+----
+logout
+----
