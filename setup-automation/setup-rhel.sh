@@ -1,8 +1,4 @@
 #!/bin/bash
-subscription-manager register --activationkey=${ACTIVATION_KEY} --org=12451665 --force
-
-dnf install -y man-db
-
 # creating sample data
 /usr/bin/touch {anaconda-ks.cfg,original-ks.cfg}
 /usr/bin/mkdir /root/openscap_data
@@ -20,5 +16,4 @@ dnf install -y man-db
     ' /etc/sudoers
 /usr/bin/sed -i 's/^#\s*\(%wheel\s\+ALL=(ALL)\s\+NOPASSWD:\s\+ALL\)/\1/' /etc/sudoers
 
-mv /etc/yum.repos.d/google-cloud.repo /root
 timedatectl set-timezone America/New_York
