@@ -5,12 +5,12 @@ This account has the highest amount of control of any account on the system.
  If a person has the root password, they can access and make changes to any part of the system.
 
 `sudo`, on the other hand, is a command which allows non-root users to
-perform administrative tasks. Privileges can be assigned to groups, users, and other ways.
-Traditionally, users in the _wheel_ group have elevated access via the `sudo` command. 
+perform administrative tasks. Privileges can be assigned to system groups, individual users, and in other ways.
+Traditionally, users in the _wheel_ group are admins and have elevated access via the `sudo` command. 
 
 NOTE: When logged in as *root*, the character in the command prompt is
 `\#`. When you switch users to *rhel*, this character changes to `$`.
-*root* will always be symbolized by `\#` to give you the warning that any
+*root* will always be symbolized by `#` to give you the warning that any
 command you enter will be run with the highest level of administrative
 privileges.
 
@@ -31,7 +31,20 @@ This command has no expected output, however the cli prompt will change to refle
 [rhel@rhel ~]$
 ----
 
-Then, try to access the following file:
+You can get information about your user and group memberships via the `id` command.
+
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
+----
+id
+----
+.Output
+[source,text,subs="+macros,+attributes"]
+----
+uid=1000(rhel) gid=1000(rhel) groups=1000(rhel),10(wheel) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+----
+
+Try to access the following file:
 
 NOTE: The below command is expected to fail with a "Permission Denied" error
 

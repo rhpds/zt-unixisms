@@ -30,7 +30,7 @@ ls ~/.ssh/
 .Output
 [source,text,subs="+macros,+attributes"]
 ----
-authorized_keys  config  {guid}.pem  {guid}.pub
+authorized_keys  config  {guid}key.pem  {guid}key.pub
 ----
 
 NOTE: This is another place where you can practice tab completion.
