@@ -16,33 +16,8 @@ Within these sections, each page has a name. The name of the page is how
 you can access the information within it. But what do you do if you
 don’t know the name of a page?
 
-The first time you try to list `man` pages, you will need to update your
-`man` database. Use the following command:
 
-.Command
-[source,bash,subs="+macros,+attributes",role=execute]
-----
-mandb
-----
-
-NOTE: If the database has not been updated, you will get an output
-similar to ``.: nothing appropriate.''
-
-.Output
-[source,text]
-----
-<< OUTPUT ABRIDGED >>
-
-Purging old database entries in /usr/local/share/man...
-Processing manual pages under /usr/local/share/man...
-0 man subdirectories contained newer manual pages.
-0 manual pages were added.
-0 stray cats were added.
-0 old database entries were purged.
-----
-
-Once you have updated the `man` database, the following command will
-list all `man` pages available on your system:
+The following command will list all `man` pages available on your system:
 
 .Command
 [source,bash,subs="+macros,+attributes",role=execute]
@@ -63,6 +38,18 @@ zsoelim (1)          - interpret .so requests in groff input
 
 This list can be quite extensive, though, so you may want to pipe (`|`)
 the output into `less` or another text viewer.
+
+[TIP]
+====
+The first time you try to list `man` pages, you may need to update your
+`man` database. Use the following command:
+
+.Command
+[source,bash,subs="+macros,+attributes",role=execute]
+----
+mandb
+----
+====
 
 If you aren’t sure exactly what a page contains, the `-f` option will
 print a short description for the specified page.

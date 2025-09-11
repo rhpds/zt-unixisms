@@ -13,7 +13,9 @@ of the system:
 cd /
 ----
 
-This command has no expected output.
+This command has no expected output. However, you can see that the end of 
+the prompt has updated. By default, the `bash` prompt includes the name of
+the current directory.
 
 The `~` alias works in any case where you have to specify a path. If you
 wanted to list the contents of the _.ssh_ subdirectory located
@@ -28,7 +30,7 @@ ls ~/.ssh/
 .Output
 [source,text,subs="+macros,+attributes"]
 ----
-authorized_keys  config  {{ guid }}.pem  {{ guid }}.pub
+authorized_keys  config  {guid}key.pem  {guid}key.pub
 ----
 
 NOTE: This is another place where you can practice tab completion.
@@ -53,7 +55,7 @@ NOTE: The `cd` command contains yet another shortcut, where running
 `cd` without any arguments will behave the same as running `cd ~`.
 
 Print the full path to the directory you are currently in, the `~`
-directory, using the ``print working directory'' command:
+directory, using the print working directory (`pwd`) command:
 
 .Command
 [source,bash,subs="+macros,+attributes",role=execute]

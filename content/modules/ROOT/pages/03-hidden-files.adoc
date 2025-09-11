@@ -30,7 +30,7 @@ ls -a
 .Output
 [source,text,subs="+macros,+attributes"]
 ----
-.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .cache  .cshrc  .gnupg  .ssh  .tcshrc  .viminfo
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .cshrc  .ssh  .tcshrc  .viminfo  
 ----
 
 Adding the `-a` option reveals that there are numerous hidden files and
@@ -78,5 +78,5 @@ ls -a
 .Output
 [source,text,subs="+macros,+attributes"]
 ----
-.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .cache  .cshrc  .gnupg .hidden-file  .ssh  .tcshrc  .viminfo
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .cshrc  .hidden-file  .ssh  .tcshrc  .viminfo
 ----

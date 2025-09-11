@@ -1,8 +1,4 @@
 #!/bin/bash
-# creating sample data
-/usr/bin/touch {anaconda-ks.cfg,original-ks.cfg}
-/usr/bin/mkdir /root/openscap_data
-/usr/bin/touch /root/openscap_data/{eval_remediate_report.html,eval_remediate_results.xml}
 
 # add rhel user to wheel
 /usr/sbin/usermod -a -G wheel rhel
