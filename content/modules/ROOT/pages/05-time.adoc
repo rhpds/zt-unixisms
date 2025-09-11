@@ -64,3 +64,6 @@ Eastern Time.
 
 For more information on using `date`, check out the
 https://man7.org/linux/man-pages/man1/date.1.html[date man page^].
+
+This has been a small sample of quirks of Linux systems. You can learn more 
+helpful commands and tips in our other labs.
