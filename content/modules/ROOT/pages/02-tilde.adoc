@@ -55,7 +55,7 @@ NOTE: The `cd` command contains yet another shortcut, where running
 `cd` without any arguments will behave the same as running `cd ~`.
 
 Print the full path to the directory you are currently in, the `~`
-directory, using the ``print working directory'' command:
+directory, using the print working directory (`pwd`) command:
 
 .Command
 [source,bash,subs="+macros,+attributes",role=execute]
