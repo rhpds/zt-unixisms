@@ -81,21 +81,36 @@ entered will be printed. Because of this, tab completion saves time and
 cuts down on mistakes.
 
 Try tab completion for yourself by copying the following
-command, without the full `grep` keyword spelled out, Then, press tab. 
+command, without the full `grep` keyword spelled out, Then, press tab.
 
-If the tab completion for the `man` command still can't uniquely identify
-`grep`, it will print the list of possible complettions. Depending on your 
-terminal config, you may also get a bell or visual indicator. 
-
-From the list, `grep` is the only option with `e` as the next letter, add an
-`e` and hit `tab` again. You should see `grep` fill in with an extra space after it.
-Some commands allow tab completion throughout a series of arguments. You can test
-this with commands like `nmcli c s` by hitting tab after the `c` and `s`.
 [source,sh]
 ----
 man -f gr
 ----
 
+Since there wasn't a unique match for `grep` pressing tab a second time
+brings up the list of possible complettions. Depending on your 
+terminal config, you may also get a bell or visual indicator. 
+
+.Output
+[source,text]
+----
+grab                       groupmod                   grub2-get-kernel-settings  grub2-script-check
+grep                       groups                     grub2-install              grub2-set-bootflag
+grid                       growpart                   grub2-menulst2cfg          grub2-set-default
+groff                      grpck                      grub2-mkconfig             grub2-set-password
+grops                      grpconv                    grub2-mkimage              grub2-setpassword
+grotty                     grpunconv                  grub2-mkpasswd-pbkdf2      grub2-switch-to-blscfg
+group.conf                 grub2-bios-setup           grub2-mkrelpath            grubby
+groupadd                   grub2-editenv              grub2-mount                
+groupdel                   grub2-emu                  grub2-probe                
+groupmems                  grub2-file                 grub2-reboot 
+----
+
+From the list, `grep` is the only option with `e` as the next letter, add an
+`e` and hit `tab` again. You should see `grep` fill in with an extra space after it.
+Some commands allow tab completion throughout a series of arguments. You can test
+this with commands like `nmcli c s` by hitting tab after the `c` and `s`.
 ====
 =====
 
