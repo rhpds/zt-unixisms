@@ -66,6 +66,10 @@ man -f grep
 grep (1)             - print lines that match patterns
 ----
 
+=====
+.Tab completion tips
+[%collapsible]
+====
 One thing that is essential for every Linux user to learn is tab
 completion. Tab completion allows you to press the _tab_ key to fill in
 the rest of the characters of the current item that you are typing. This
@@ -76,10 +80,39 @@ time you press tab, a list of options that match the string you have
 entered will be printed. Because of this, tab completion saves time and
 cuts down on mistakes.
 
-You could try tab completion for yourself by re-typing the previous
-command, but instead of typing `grep` all the way out, just type `gre`
-and then press tab. You will see that `grep` fills in, and you can hit
-enter to execute the command.
+Try tab completion for yourself by copying the following
+command, without the full `grep` keyword spelled out, Then, press tab.
+
+[source,sh]
+----
+man -f gr
+----
+
+Since there wasn't a unique match for `grep` pressing tab a second time
+brings up the list of possible complettions. Depending on your 
+terminal config, you may also get a bell or visual indicator. 
+
+.Output
+[source,text]
+----
+grab                       groupmod                   grub2-get-kernel-settings  grub2-script-check
+grep                       groups                     grub2-install              grub2-set-bootflag
+grid                       growpart                   grub2-menulst2cfg          grub2-set-default
+groff                      grpck                      grub2-mkconfig             grub2-set-password
+grops                      grpconv                    grub2-mkimage              grub2-setpassword
+grotty                     grpunconv                  grub2-mkpasswd-pbkdf2      grub2-switch-to-blscfg
+group.conf                 grub2-bios-setup           grub2-mkrelpath            grubby
+groupadd                   grub2-editenv              grub2-mount                
+groupdel                   grub2-emu                  grub2-probe                
+groupmems                  grub2-file                 grub2-reboot 
+----
+
+From the list, `grep` is the only option with `e` as the next letter, add an
+`e` and hit `tab` again. You should see `grep` fill in with an extra space after it.
+Some commands allow tab completion throughout a series of arguments. You can test
+this with commands like `nmcli c s` by hitting tab after the `c` and `s`.
+====
+=====
 
 These commands work great if you know the title of the `man` page that
 you are looking for, but what if you want to search for specific
