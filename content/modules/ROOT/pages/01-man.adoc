@@ -66,6 +66,10 @@ man -f grep
 grep (1)             - print lines that match patterns
 ----
 
+=====
+.Tab completion tips
+[%collapsible]
+====
 One thing that is essential for every Linux user to learn is tab
 completion. Tab completion allows you to press the _tab_ key to fill in
 the rest of the characters of the current item that you are typing. This
@@ -76,10 +80,19 @@ time you press tab, a list of options that match the string you have
 entered will be printed. Because of this, tab completion saves time and
 cuts down on mistakes.
 
-You could try tab completion for yourself by re-typing the previous
-command, but instead of typing `grep` all the way out, just type `gre`
-and then press tab. You will see that `grep` fills in, and you can hit
-enter to execute the command.
+Try tab completion for yourself by copying the following
+command, without the full `grep` keyword spelled out, Then, press tab. 
+
+You will see that `grep` fills in, and you can hit
+enter to execute the command. If the tab completion for the `man` command
+still can't uniquely identify `grep`, add one more letter and hit `tab` again.
+[source,sh]
+----
+man -f gr
+----
+
+====
+=====
 
 These commands work great if you know the title of the `man` page that
 you are looking for, but what if you want to search for specific
