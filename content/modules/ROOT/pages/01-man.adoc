@@ -83,9 +83,14 @@ cuts down on mistakes.
 Try tab completion for yourself by copying the following
 command, without the full `grep` keyword spelled out, Then, press tab. 
 
-You will see that `grep` fills in, and you can hit
-enter to execute the command. If the tab completion for the `man` command
-still can't uniquely identify `grep`, add one more letter and hit `tab` again.
+If the tab completion for the `man` command still can't uniquely identify
+`grep`, it will print the list of possible complettions. Depending on your 
+terminal config, you may also get a bell or visual indicator. 
+
+From the list, `grep` is the only option with `e` as the next letter, add an
+`e` and hit `tab` again. You should see `grep` fill in with an extra space after it.
+Some commands allow tab completion throughout a series of arguments. You can test
+this with commands like `nmcli c s` by hitting tab after the `c` and `s`.
 [source,sh]
 ----
 man -f gr
