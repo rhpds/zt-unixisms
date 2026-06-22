@@ -7,8 +7,8 @@ virtualmachines:
     cores: 1
     image_size: "40G"
     register_satellite: false
-    packages:
-      - man-db
+    # packages:
+    # - man-db
     tags:
       - key: "AnsibleGroup"
         value: "bastions"
