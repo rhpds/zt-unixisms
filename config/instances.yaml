@@ -6,8 +6,9 @@ virtualmachines:
     memory: "4G"
     cores: 1
     image_size: "40G"
-    packages:
-      - man-db
+    register_satellite: false
+    # packages:
+    # - man-db
     tags:
       - key: "AnsibleGroup"
         value: "bastions"
